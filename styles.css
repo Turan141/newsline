@@ -693,6 +693,12 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
   .wrapper .main_news {
     width: auto;
   }
+  .wrapper .main_news .main_news_small .variant1 .cell_like_comment {
+    padding: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+  }
   .wrapper .additional_news .additional_news_blog .news_tags .tag_list ul {
     display: none;
   }
@@ -702,6 +708,16 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
   .wrapper .additional_news .additional_news_blog .adittional_news_posts {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+  .wrapper .additional_news .additional_news_blog .adittional_news_posts .small_news_cell .variant1 {
+    padding: 0.5rem 0rem;
+  }
+  .wrapper .additional_news .additional_news_blog .adittional_news_posts .small_news_cell .variant1 .cell_like_comment {
+    padding: 0.8rem 1rem 0rem 1rem;
   }
 }
 @media screen and (min-width: 401px) and (max-width: 767px) {
@@ -755,6 +771,12 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
   .wrapper .main_news {
     width: auto;
   }
+  .wrapper .main_news .main_news_small .variant1 .cell_like_comment {
+    padding: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+  }
   .wrapper .additional_news .additional_news_blog .news_tags .tag_list ul {
     display: none;
   }
@@ -764,6 +786,16 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
   .wrapper .additional_news .additional_news_blog .adittional_news_posts {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+  .wrapper .additional_news .additional_news_blog .adittional_news_posts .small_news_cell .variant1 {
+    padding: 0.5rem 0rem;
+  }
+  .wrapper .additional_news .additional_news_blog .adittional_news_posts .small_news_cell .variant1 .cell_like_comment {
+    padding: 0.8rem 1rem 0rem 1rem;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
