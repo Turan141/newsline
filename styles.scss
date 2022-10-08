@@ -2200,21 +2200,21 @@ header {
 			width: 100vw;
 			margin-right: 0;
 			.search_row {
-				width: 88%;
+				width: 95%;
 			}
 			.most_searched_panel {
 				display: flex;
 				flex-direction: column;
-				padding: 0rem 1rem 1rem 1rem;
+				padding: 0rem 1rem 1rem 0;
 				.most_search_left {
 					display: flex;
 					flex-direction: row-reverse;
 					justify-content: space-between;
 					padding: 1rem 1rem;
-					width: 95vw;
+					width: 100%;
 				}
 				.most_search_right {
-					max-width: 95vw;
+					max-width: 100%;
 					overflow: hidden;
 				}
 				.search_row {
@@ -2223,7 +2223,7 @@ header {
 			}
 			.header_row {
 				padding: 1rem 1rem 1rem 1rem;
-				width: 95%;
+				width: 100%;
 				.header_left_col {
 					.navigation_list {
 						display: none;
