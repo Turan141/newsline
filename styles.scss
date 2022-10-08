@@ -13,6 +13,10 @@ body {
 	align-items: flex-start;
 	justify-content: center;
 	overflow-x: hidden;
+
+	// background-image: url("/assets/images/bg.svg");
+	// background-position: left top;
+	// background-repeat: repeat-y; // Causes repeat from left-to-right only
 }
 
 header {
@@ -120,6 +124,7 @@ header {
 			justify-content: space-between;
 			height: 2rem;
 			gap: 0.5rem;
+			font-family: Montserrat;
 			input[type="text"] {
 				padding: 0.6rem 2rem;
 				width: 96%;
@@ -127,6 +132,8 @@ header {
 				outline: none;
 				border: none;
 				border-bottom: 2px solid #c0c0c0;
+				font-family: Montserrat;
+				font-weight: 400;
 			}
 			button {
 				background-color: transparent;
@@ -147,6 +154,7 @@ header {
 				display: flex;
 				align-items: center;
 				gap: 20px;
+				width: 390px;
 				.most_searched_top_select {
 					display: flex;
 					align-items: center;
@@ -214,7 +222,7 @@ header {
 	}
 }
 .adver_block {
-	position: sticky;
+	position: fixed;
 	top: 20%;
 	left: 1350px;
 	.adver_pic {
@@ -228,15 +236,18 @@ header {
 	align-items: flex-start;
 	justify-content: flex-start;
 	margin-left: 12rem;
+	gap: 1rem;
+
 	.seperator {
 		width: 1125px;
 		// margin: 1rem 0;
+		background-color: #c0c0c0;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
+		height: 2px;
+		border-radius: 8px;
 	}
-	section {
-		margin-bottom: 1rem;
-	}
+
 	.main_news {
 		margin-bottom: 1rem;
 		display: grid;
@@ -725,7 +736,17 @@ header {
 		height: 700px;
 		width: 750px;
 		display: flex;
+		margin-bottom: 5rem;
 		// background-color: white;
+		.white_bg {
+			left: 0;
+			top: 500px;
+			width: 100vw;
+			height: 620px;
+			position: absolute;
+			background: #fff;
+			z-index: -1;
+		}
 		.preview_blog {
 			width: 100%;
 			height: 100%;
@@ -735,7 +756,7 @@ header {
 				display: flex;
 				flex-direction: column;
 				// justify-content: space-evenly;
-				gap: 1rem;
+				gap: 25px;
 				flex: 0 0 70%;
 				width: 100%;
 				height: 100%;
@@ -788,7 +809,7 @@ header {
 								align-items: center;
 								list-style: none;
 								text-decoration: none;
-								background-color: #ffffff;
+								background-color: #f2f2f2;
 								border-radius: 8px;
 								min-width: 60px;
 								min-height: 25px;
@@ -831,9 +852,9 @@ header {
 							width: 710px;
 							gap: 10px;
 							img {
-								filter: invert(0%) sepia(0%) saturate(100%)
-									hue-rotate(0deg) brightness(100%)
-									contrast(120%);
+								// filter: invert(0%) sepia(0%) saturate(100%)
+								// 	hue-rotate(0deg) brightness(100%)
+								// 	contrast(120%);
 							}
 							p {
 								font-weight: 500;
@@ -938,25 +959,50 @@ header {
 			}
 			.preview_right {
 				width: 100%;
-				height: 100%;
+				height: 600px;
 				border-radius: 8px;
 				background-color: #fff;
-				padding: 0.5rem 0.5rem;
+				padding: 0.5rem 0.1rem 0.5rem 0.5rem;
 				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 				overflow-y: scroll;
-				&::-webkit-scrollbar-track {
-					border-radius: 10px;
-					background-color: #f5f5f5;
-				}
+				position: relative;
+				transition: 0.5s ease;
 
-				&::-webkit-scrollbar {
-					width: 7px;
-					background-color: #f5f5f5;
-				}
+				.scroll_wrapper {
+					overflow-y: scroll;
+					height: 100%;
+					&::-webkit-scrollbar-track {
+						border-radius: 10px;
+						background-color: #f5f5f5;
+					}
 
-				&::-webkit-scrollbar-thumb {
-					border-radius: 5px;
-					background-color: rgba(175, 174, 174, 0.722);
+					&::-webkit-scrollbar {
+						width: 7px;
+						background-color: #f5f5f5;
+						overflow: visible;
+					}
+
+					&::-webkit-scrollbar-thumb {
+						overflow: visible;
+						border-radius: 5px;
+						background-color: rgba(175, 174, 174, 0.722);
+					}
+				}
+				.cover-bar {
+					position: absolute;
+					background: #fff;
+
+					height: 100%;
+					top: 0;
+					right: 0;
+					width: 1rem;
+					-webkit-transition: all 0.5s;
+					opacity: 1;
+				}
+				/* MAGIC HAPPENS HERE */
+				&:hover .cover-bar {
+					opacity: 0;
+					-webkit-transition: all 0.5s;
 				}
 				.hot_news_wrapper {
 					.hot_news_name {
@@ -967,6 +1013,7 @@ header {
 						gap: 20px;
 						position: sticky;
 						top: 0;
+						z-index: 1;
 						h2 {
 							font-weight: 600;
 							font-size: 14px;
@@ -985,7 +1032,7 @@ header {
 							flex-direction: column;
 							li {
 								display: flex;
-								padding: 1rem 0;
+								padding: 0.4rem 0.2rem;
 								align-items: flex-start;
 								gap: 10px;
 								.hot_news_logo {
@@ -1009,7 +1056,7 @@ header {
 										-webkit-box-orient: vertical;
 									}
 									p {
-										font-weight: 500;
+										font-weight: 400;
 										font-size: 10px;
 										line-height: 12px;
 										color: #c0c0c0;
@@ -1041,14 +1088,16 @@ header {
 			display: flex;
 			height: 100%;
 			gap: 15px;
+			width: 100%;
 			.single_left {
 				display: flex;
 				flex-direction: column;
 				height: 100%;
 				flex: 0 0 70%;
 				gap: 20px;
+				width: 100%;
 				.single_article_post {
-					.article_citate_text {
+					.article_citate_text_blog {
 						display: flex;
 						flex-direction: column;
 						gap: 20px;
@@ -1057,12 +1106,17 @@ header {
 							flex-direction: row;
 							gap: 42px;
 							padding-right: 3rem;
-
+							.citate_logo {
+								padding-top: 1rem;
+							}
 							.citate_text {
 								font-weight: 400;
 								font-size: 14px;
 								line-height: 20px;
 								color: #382828;
+								.article_citate_text {
+									padding-top: 1rem;
+								}
 							}
 						}
 					}
@@ -1089,9 +1143,11 @@ header {
 						display: flex;
 						margin-left: auto;
 						margin-top: 1rem;
+						width: 100%;
+						// width: 710px;
 						.single_readmore {
 							display: flex;
-							width: 720px;
+							width: 100%;
 							height: 35px;
 							align-items: center;
 							justify-content: space-between;
@@ -1099,6 +1155,8 @@ header {
 								display: flex;
 								align-items: center;
 								gap: 10px;
+								margin-left: 4.5rem;
+								// padding-left: 4.8rem;
 								img {
 								}
 								a {
@@ -1115,7 +1173,7 @@ header {
 								display: flex;
 								align-items: center;
 								gap: 10px;
-
+								padding-right: 3rem;
 								flex-direction: row;
 								.left_div {
 									display: flex;
@@ -1254,25 +1312,54 @@ header {
 				height: 600px;
 				border-radius: 8px;
 				background-color: #fff;
-				padding: 0.5rem 0.5rem;
+				padding: 0.5rem 0.1rem 0.5rem 0.5rem;
 				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-				overflow-y: scroll;
-				&::-webkit-scrollbar-track {
-					border-radius: 10px;
-					background-color: #f5f5f5;
+				transition: 0.5s ease;
+				position: relative;
+				// &:hover {
+				// 	overflow-y: scroll;
+				// 	transition: 0.5s ease;
+				// }
+				.scroll_wrapper {
+					overflow-y: scroll;
+					height: 100%;
+					&::-webkit-scrollbar-track {
+						border-radius: 10px;
+						background-color: #f5f5f5;
+					}
+
+					&::-webkit-scrollbar {
+						width: 7px;
+						background-color: #f5f5f5;
+						overflow: visible;
+					}
+
+					&::-webkit-scrollbar-thumb {
+						overflow: visible;
+						border-radius: 5px;
+						background-color: rgba(175, 174, 174, 0.722);
+					}
+				}
+				.cover-bar {
+					position: absolute;
+					background: #fff;
+
+					height: 100%;
+					top: 0;
+					right: 0;
+					width: 1rem;
+					-webkit-transition: all 0.5s;
+					opacity: 1;
+				}
+				/* MAGIC HAPPENS HERE */
+				&:hover .cover-bar {
+					opacity: 0;
+					-webkit-transition: all 0.5s;
 				}
 
-				&::-webkit-scrollbar {
-					width: 7px;
-					background-color: #f5f5f5;
-				}
-
-				&::-webkit-scrollbar-thumb {
-					border-radius: 5px;
-					background-color: rgba(175, 174, 174, 0.722);
-				}
 				.hot_news_wrapper {
 					.hot_news_name {
+						z-index: 1;
 						padding: 0.5rem 1rem;
 						border-radius: 8px;
 						background-color: #f2f2f2;
@@ -1298,7 +1385,7 @@ header {
 							flex-direction: column;
 							li {
 								display: flex;
-								padding: 1rem 0;
+								padding: 0.4rem 0.2rem;
 								align-items: flex-start;
 								gap: 10px;
 								.hot_news_logo {
@@ -1333,6 +1420,10 @@ header {
 					}
 					.show_more {
 						padding: 0 1rem 1rem 1rem;
+						cursor: pointer;
+						:hover {
+							color: #394fc0;
+						}
 						p {
 							font-weight: 600;
 							font-size: 8px;
@@ -1350,8 +1441,22 @@ header {
 	.recommended_news_section {
 		width: 100%;
 		display: flex;
+
+		// .white_bg {
+		// 	left: 0;
+		// 	// top: 1400px;
+		// 	width: 100vw;
+		// 	height: 620px;
+		// 	position: absolute;
+		// 	background: #fff;
+		// 	z-index: -1;
+		// }
 		.recommended_news_blog {
 			width: 100%;
+			position: relative;
+			.section_info {
+				width: 1140px;
+			}
 			.blog_name {
 				padding-bottom: 1rem;
 				h1 {
@@ -1367,6 +1472,7 @@ header {
 				display: flex;
 				justify-content: space-between;
 				margin-bottom: 2rem;
+				gap: 1rem;
 				.tag_list {
 					display: flex;
 					ul {
@@ -1428,20 +1534,38 @@ header {
 				}
 			}
 			.recommended_posts {
+				overflow-x: hidden;
+				.white_bg {
+					margin-top: 10rem;
+					overflow-x: hidden;
+					left: -14%;
+					// top: 20px;
+					max-width: 100vw;
+					min-width: 100vw;
+					width: 100vw;
+					height: 550px;
+					position: absolute;
+					background: #fff;
+					z-index: -1;
+				}
 				display: grid;
 				width: 100%;
+				margin-bottom: 1.5rem;
 				// grid-template-columns: repeat(3, auto);
 				grid-template-columns: repeat(
 					auto-fill,
 					minmax(364px, 364px)
 				);
-				gap: 1rem;
+				gap: 1.5rem;
 				.small_recommended_cell {
 					border-radius: 8px;
 					background-color: #fff;
 					width: 364px;
 					box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 					.variant1 {
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
 						.cell_title_img {
 							//вот тут надо решиться, стоит ли задать высоту, если размер картинки будет другим
 							// height: 200px;
@@ -1730,7 +1854,7 @@ header {
 					display: flex;
 					flex-direction: row-reverse;
 					justify-content: space-between;
-					padding: 1rem 1rem;
+					padding: 0 1rem 1rem 1rem;
 
 					width: 100vw;
 					.most_searched_top_searchword {
@@ -1902,7 +2026,8 @@ header {
 					}
 				}
 				.section_info {
-					padding-left: 1rem;
+					width: 100%;
+
 					.news_tags {
 						overflow: hidden;
 						margin-bottom: 1rem;
@@ -1917,6 +2042,7 @@ header {
 			height: auto;
 			width: 100vw;
 			padding: 0 1rem;
+			margin-bottom: 1rem;
 			.preview_blog {
 				.preview_left {
 					.preview_title {
@@ -1960,9 +2086,15 @@ header {
 		.single_page_section {
 			height: auto;
 			width: 100vw;
-			padding: 1rem;
+			overflow-x: hidden;
+			padding: 0 1rem;
+			// padding: 1rem;
 			.single_page_blog {
+				display: flex;
+				justify-content: center;
+				width: 100%;
 				.single_left {
+					width: 100%;
 					.single_post_info {
 						p {
 							font-size: 10px;
@@ -1971,6 +2103,24 @@ header {
 					.single_submenu {
 						width: 350px;
 						overflow-x: hidden;
+						gap: 0.4rem;
+						align-items: center;
+						justify-content: flex-start;
+						.submenu_items {
+							ul {
+								li {
+									padding: 0.2rem 0.4rem;
+								}
+							}
+						}
+						.iconlogo {
+							display: flex;
+							align-items: center;
+							img {
+								width: 25px;
+								height: 25px;
+							}
+						}
 					}
 					.single_title {
 						h1 {
@@ -1983,9 +2133,9 @@ header {
 						display: flex;
 						flex-direction: column;
 						align-items: flex-end;
-						width: 370px;
-						.article_citate_text {
-							// width: 350px;
+						width: 350px;
+						.article_citate_text_blog {
+							width: 350px;
 							font-size: 12px;
 							.article_data {
 								gap: 10px;
@@ -1999,24 +2149,35 @@ header {
 								}
 							}
 							.article_seperator {
-								width: 350px;
+								display: flex;
+								justify-content: flex-start;
+								width: 100%;
+								.seperator_blue {
+									width: 100%;
+								}
 							}
 						}
 						.article_post_text {
-							width: 350px;
+							width: 320px;
 							padding: 0.5rem 0rem;
 							font-size: 12px;
 							line-height: 16px;
 						}
 						.single_readmore_wrapper {
 							margin-top: 3rem;
+							padding: 0;
+
 							.single_readmore {
 								display: flex;
 								flex-direction: column-reverse;
-								width: 370px;
+								width: 355px;
 								justify-content: flex-start;
 								align-items: flex-start;
 								padding-right: 15px;
+								gap: 1rem;
+								.readmore_button {
+									margin-left: 0;
+								}
 								.comments_block {
 									width: 100%;
 									display: flex;
@@ -2115,12 +2276,26 @@ header {
 			.recommended_news_blog {
 				.section_info {
 					padding-left: 1rem;
+					width: 100%;
 					.news_tags {
 						overflow: hidden;
 					}
 				}
 				.recommended_posts {
 					justify-content: center;
+					.white_bg {
+						margin-top: 10rem;
+						overflow-x: hidden;
+						left: 0;
+						// top: 20px;
+						max-width: 100vw;
+						min-width: 100vw;
+						width: 100vw;
+						height: 550px;
+						position: absolute;
+						background: #fff;
+						z-index: -1;
+					}
 				}
 			}
 		}
@@ -2278,6 +2453,7 @@ header {
 			width: 100vw;
 			padding: 1rem;
 			.single_page_blog {
+				justify-content: center;
 				.single_left {
 					.single_post_info {
 						p {
@@ -2285,8 +2461,17 @@ header {
 						}
 					}
 					.single_submenu {
-						width: 350px;
+						width: 100%;
 						overflow-x: hidden;
+						gap: 1rem;
+						.iconlogo {
+							display: flex;
+							align-items: center;
+							img {
+								width: 25px;
+								height: 25px;
+							}
+						}
 					}
 					.single_title {
 						h1 {
@@ -2299,12 +2484,12 @@ header {
 						display: flex;
 						flex-direction: column;
 						align-items: flex-end;
-						width: 370px;
-						.article_citate_text {
-							// width: 350px;
+						width: 100%;
+						.article_citate_text_blog {
+							width: 100%;
 							font-size: 12px;
 							.article_data {
-								gap: 10px;
+								gap: 5%;
 								padding-right: 0;
 
 								.citate_logo {
@@ -2315,24 +2500,36 @@ header {
 								}
 							}
 							.article_seperator {
-								width: 350px;
+								width: 100%;
+								display: flex;
+								justify-content: center;
+								.seperator_blue {
+									width: 100%;
+								}
 							}
 						}
 						.article_post_text {
-							width: 350px;
+							width: 90%;
 							padding: 0.5rem 0rem;
 							font-size: 12px;
 							line-height: 16px;
 						}
 						.single_readmore_wrapper {
 							margin-top: 3rem;
+							justify-content: space-between;
+							width: 100%;
+							padding-left: 0;
 							.single_readmore {
 								display: flex;
 								flex-direction: column-reverse;
-								width: 370px;
+								width: 380px;
 								justify-content: flex-start;
 								align-items: flex-start;
 								padding-right: 15px;
+								gap: 1rem;
+								.readmore_button {
+									margin-left: 0;
+								}
 								.comments_block {
 									width: 100%;
 									display: flex;
@@ -2350,10 +2547,39 @@ header {
 	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 500px) and (max-width: 768px) {
+	.wrapper {
+		.single_page_section {
+			.single_page_blog {
+				.single_left {
+					.single_article_post {
+						.single_readmore_wrapper {
+							width: 100%;
+							// padding-left: 2rem;
+							.single_readmore {
+								width: 100%;
+								.readmore_button {
+									margin-left: 0;
+								}
+							}
+						}
+						.article_citate_text_blog {
+							max-width: 100vw;
+							.article_data {
+								gap: 6%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1025px) {
 	header {
 		.header_main {
-			width: 100vw;
+			width: 745px;
 			margin-right: 0;
 			.search_row {
 				width: 95%;
@@ -2368,7 +2594,7 @@ header {
 					flex-direction: row-reverse;
 					justify-content: space-between;
 					padding: 1rem 1rem;
-					width: 95vw;
+					width: 100%;
 				}
 				.most_search_right {
 					max-width: 95vw;
@@ -2414,6 +2640,7 @@ header {
 		margin: 0;
 		width: 100vw;
 		margin-left: 0;
+		gap: 3rem;
 		.seperator {
 			display: none;
 			width: 735px;
@@ -2478,8 +2705,32 @@ header {
 		}
 		.recommended_news_section {
 			.recommended_news_blog {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				.recommended_posts {
+					.white_bg {
+						margin-top: 10rem;
+						overflow-x: hidden;
+						left: -14%;
+						// top: 20px;
+						max-width: 100vw;
+						min-width: 100vw;
+						width: 100vw;
+						height: 550px;
+						position: absolute;
+						background: #fff;
+						z-index: -1;
+					}
+				}
 				.section_info {
 					//padd
+					display: flex;
+					flex-direction: column;
+					width: 745px;
+
+					justify-content: center;
 				}
 				.recommended_posts {
 					justify-content: center;
@@ -2503,11 +2754,12 @@ header {
 		}
 		.single_page_section {
 			height: auto;
-			width: 100vw;
+			width: 100%;
 			padding: 1rem;
 			.single_page_blog {
 				justify-content: center;
 				.single_left {
+					width: 90%;
 					.single_post_info {
 						p {
 							font-size: 10px;
@@ -2516,6 +2768,7 @@ header {
 					.single_submenu {
 						// width: 350px;
 						overflow-x: hidden;
+						gap: 1rem;
 					}
 					.single_title {
 						h1 {
@@ -2527,41 +2780,60 @@ header {
 					.single_article_post {
 						display: flex;
 						flex-direction: column;
-						align-items: flex-end;
+						align-items: flex-start;
+						padding: 0rem;
+						// padding-left: 3.5rem;
 						// width: 370px;
-						.article_citate_text {
+						.article_citate_text_blog {
 							// width: 350px;
+							padding-right: 1rem;
 							font-size: 12px;
 							.article_data {
 								gap: 10px;
 								padding-right: 0;
 
 								.citate_logo {
+									padding-top: 1rem;
 									img {
 										width: 25px;
 										height: 25px;
 									}
 								}
+								.citate_text {
+									padding-left: 1.2rem;
+								}
 							}
 							.article_seperator {
-								// width: 350px;
+								width: 100%;
+								display: flex;
+								justify-content: center;
+								.seperator_blue {
+									width: 100%;
+								}
 							}
 						}
 						.article_post_text {
 							// width: 350px;
-							padding: 0.5rem 0rem;
+							// padding: 0.5rem 2rem;
+							padding: 0.5rem 1rem 0.5rem 3.5rem;
 							font-size: 12px;
 							line-height: 16px;
 						}
 						.single_readmore_wrapper {
 							margin-top: 3rem;
+							width: 100%;
 							.single_readmore {
+								gap: 10px;
 								display: flex;
 								flex-direction: column-reverse;
 								// width: 370px;
 								justify-content: flex-start;
 								align-items: flex-start;
 								padding-right: 15px;
+								width: 100%;
+								.readmore_button {
+									margin-left: 0;
+								}
 								.comments_block {
 									width: 100%;
 									display: flex;
@@ -2579,9 +2851,15 @@ header {
 	}
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1367px) {
+@media screen and (min-width: 1026px) and (max-width: 1367px) {
 	header {
 		.header_main {
+			.most_searched_panel {
+				.most_search_left {
+					width: 480px;
+				}
+			}
+
 			.header_row {
 				// padding: 1% 5% 1% 5%;
 				.header_left_col {
@@ -2628,10 +2906,12 @@ header {
 	.wrapper {
 		margin-left: 10%;
 		width: 73vw;
+		gap: 3rem;
 		.main_news {
 			gap: 0.8rem;
 			// justify-content: center;
 		}
+
 		.seperator {
 			width: 735px;
 			margin: 1rem 0;
@@ -2672,6 +2952,21 @@ header {
 		}
 		.recommended_news_section {
 			.recommended_news_blog {
+				.recommended_posts {
+					.white_bg {
+						margin-top: 10rem;
+						overflow-x: hidden;
+						// left: -14%;
+						// top: 20px;
+						max-width: 100vw;
+						min-width: 100vw;
+						width: 100vw;
+						height: 550px;
+						position: absolute;
+						background: #fff;
+						z-index: -1;
+					}
+				}
 				.section_info {
 					width: 750px;
 				}
@@ -2707,6 +3002,11 @@ header {
 			padding: 0rem 3rem 0rem 0;
 			width: 80vw;
 			margin-right: 0%;
+			.most_searched_panel {
+				.most_search_left {
+					width: 425px;
+				}
+			}
 			.header_row {
 				// padding: 1% 7% 1% 7%;
 				.header_left_col {
@@ -2786,12 +3086,12 @@ header {
 						"w we"
 						"rr tt"
 						". .";
-					gap: 1rem;
+					gap: 25px;
 				}
 			}
 		}
 		.preview_section {
-			height: 780px;
+			height: 840px;
 			width: 1050px;
 			.preview_blog {
 				.preview_left {
@@ -2860,7 +3160,7 @@ header {
 	.wrapper {
 		margin-left: 10%;
 		.preview_section {
-			height: 820px;
+			height: 870px;
 			width: 1120px;
 		}
 		.additional_news {
