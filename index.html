@@ -19,6 +19,16 @@
 		<title>NewslLine</title>
 	</head>
 	<header>
+		<nav id="nav_burger" class="nav nav_hidden">
+			<ul>
+				<li><a href="/news/politics/">Политика</a></li>
+				<li><a href="/news/economy/">Экономика</a></li>
+				<li><a href="/news/society/">Общество</a></li>
+				<li><a href="/news/accidents/">Происшествия</a></li>
+				<li><a href="/news/sports/">Спорт</a></li>
+				<li><a href="/news/science/">Наука</a></li>
+			</ul>
+		</nav>
 		<div class="header_main">
 			<div class="header_row">
 				<div class="header_left_col">
@@ -122,8 +132,10 @@
 				<img src="/assets/images/adpic.svg" alt="adver" />
 			</div>
 		</div>
+
 		<div class="wrapper">
 			<section class="main_news">
+				<div class="white_bg"></div>
 				<div class="main_news_small">
 					<div class="variant1">
 						<div class="cell_title_img">
@@ -535,6 +547,7 @@
 			</section>
 			<div class="seperator"></div>
 			<section class="additional_news">
+				<div class="white_bg"></div>
 				<div class="additional_news_blog">
 					<div class="section_info">
 						<div class="blog_name">
@@ -823,6 +836,7 @@
 			</section>
 			<div class="seperator"></div>
 			<section class="additional_news">
+				<div class="white_bg"></div>
 				<div class="additional_news_blog">
 					<div class="section_info">
 						<div class="blog_name">
@@ -1112,6 +1126,13 @@
 		</div>
 	</body>
 	<script>
-		// navigation_recommended
+		const burgerBtn = document.querySelector(
+			".burger_menu_icon"
+		)
+		const burgerMenu = document.querySelector("#nav_burger")
+
+		burgerBtn.addEventListener("click", () =>
+			burgerMenu.classList.toggle("nav_hidden")
+		)
 	</script>
 </html>
