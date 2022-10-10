@@ -2017,6 +2017,7 @@ header {
 			flex-direction: column;
 			align-items: center;
 			.hot_news {
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 				background-color: #ffffff;
 				display: flex;
 				flex-direction: column;
@@ -2060,19 +2061,23 @@ header {
 								display: flex;
 								flex-direction: column;
 								gap: 7px;
-								h2 {
-									font-style: normal;
-									font-weight: 600;
-									font-size: 14px;
-									// line-height: 10px;
-									color: #000000;
-									overflow: hidden;
-									text-overflow: ellipsis;
-									display: -webkit-box;
-									-webkit-line-clamp: 3;
-									line-clamp: 3;
-									-webkit-box-orient: vertical;
+								a {
+									text-decoration: none;
+									h2 {
+										font-style: normal;
+										font-weight: 600;
+										font-size: 14px;
+										// line-height: 10px;
+										color: #000000;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										line-clamp: 3;
+										-webkit-box-orient: vertical;
+									}
 								}
+
 								p {
 									font-style: normal;
 									font-weight: 500;
@@ -2526,6 +2531,7 @@ header {
 				padding: 2rem 1rem 1.1rem 1rem;
 				gap: 1rem;
 				border-radius: 8px;
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 				.hot_news_title {
 					display: none;
 				}
@@ -2561,6 +2567,22 @@ header {
 								display: flex;
 								flex-direction: column;
 								gap: 7px;
+								a {
+									text-decoration: none;
+									h2 {
+										font-style: normal;
+										font-weight: 600;
+										font-size: 14px;
+										// line-height: 10px;
+										color: #000000;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										line-clamp: 3;
+										-webkit-box-orient: vertical;
+									}
+								}
 								h2 {
 									font-style: normal;
 									font-weight: 600;
@@ -3003,6 +3025,7 @@ header {
 			width: auto;
 			height: 100%;
 			.hot_news {
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 				background-color: #ffffff;
 				display: flex;
 				flex-direction: column;
@@ -3046,18 +3069,21 @@ header {
 								display: flex;
 								flex-direction: column;
 								gap: 7px;
-								h2 {
-									font-style: normal;
-									font-weight: 600;
-									font-size: 14px;
-									// line-height: 10px;
-									color: #000000;
-									overflow: hidden;
-									text-overflow: ellipsis;
-									display: -webkit-box;
-									-webkit-line-clamp: 3;
-									line-clamp: 3;
-									-webkit-box-orient: vertical;
+								a {
+									text-decoration: none;
+									h2 {
+										font-style: normal;
+										font-weight: 600;
+										font-size: 14px;
+										// line-height: 10px;
+										color: #000000;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										line-clamp: 3;
+										-webkit-box-orient: vertical;
+									}
 								}
 								p {
 									font-style: normal;
@@ -3520,6 +3546,8 @@ header {
 				"small_cell_5 . .";
 
 			.hot_news {
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
 				grid-area: hot_news;
 				background-color: #ffffff;
 				display: flex;
@@ -3564,18 +3592,21 @@ header {
 								display: flex;
 								flex-direction: column;
 								gap: 7px;
-								h2 {
-									font-style: normal;
-									font-weight: 600;
-									font-size: 14px;
-									// line-height: 10px;
-									color: #000000;
-									overflow: hidden;
-									text-overflow: ellipsis;
-									display: -webkit-box;
-									-webkit-line-clamp: 3;
-									line-clamp: 3;
-									-webkit-box-orient: vertical;
+								a {
+									text-decoration: none;
+									h2 {
+										font-style: normal;
+										font-weight: 600;
+										font-size: 14px;
+										// line-height: 10px;
+										color: #000000;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										line-clamp: 3;
+										-webkit-box-orient: vertical;
+									}
 								}
 								p {
 									font-style: normal;
@@ -3871,6 +3902,7 @@ header {
 		.main_news {
 			display: grid;
 			gap: 1em 1em;
+
 			grid-template-areas:
 				"hot_news hot_news ."
 				"small_cell_1 small_cell_2 ."
@@ -3927,7 +3959,7 @@ header {
 									align-items: center;
 									content: "";
 									width: 38px;
-									height: 100px;
+									height: 115px;
 									background-color: #f2f2f2;
 									z-index: -1;
 									border-radius: 8px;
@@ -3937,18 +3969,21 @@ header {
 								display: flex;
 								flex-direction: column;
 								gap: 8px;
-								h2 {
-									font-style: normal;
-									font-weight: 600;
-									font-size: 14px;
-									line-height: 17px;
-									color: #000000;
-									overflow: hidden;
-									text-overflow: ellipsis;
-									display: -webkit-box;
-									-webkit-line-clamp: 3;
-									line-clamp: 3;
-									-webkit-box-orient: vertical;
+								a {
+									text-decoration: none;
+									h2 {
+										font-style: normal;
+										font-weight: 600;
+										font-size: 14px;
+										line-height: 17px;
+										color: #000000;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										line-clamp: 3;
+										-webkit-box-orient: vertical;
+									}
 								}
 								p {
 									font-weight: 500;
@@ -4154,6 +4189,8 @@ header {
 				"hot_news hot_news small_cell_2"
 				"small_cell_3 small_cell_4 small_cell_5";
 			.hot_news {
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
 				grid-area: hot_news;
 				width: 100%;
 				padding: 1.5rem 2rem;
@@ -4182,7 +4219,7 @@ header {
 						display: flex;
 						width: 100%;
 						flex-direction: column;
-						gap: 0.8rem;
+						gap: 1rem;
 						z-index: -1;
 						li {
 							display: flex;
@@ -4214,18 +4251,21 @@ header {
 								display: flex;
 								flex-direction: column;
 								gap: 8px;
-								h2 {
-									font-style: normal;
-									font-weight: 600;
-									font-size: 14px;
-									line-height: 17px;
-									color: #000000;
-									overflow: hidden;
-									text-overflow: ellipsis;
-									display: -webkit-box;
-									-webkit-line-clamp: 3;
-									line-clamp: 3;
-									-webkit-box-orient: vertical;
+								a {
+									text-decoration: none;
+									h2 {
+										font-style: normal;
+										font-weight: 600;
+										font-size: 14px;
+										line-height: 17px;
+										color: #000000;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										line-clamp: 3;
+										-webkit-box-orient: vertical;
+									}
 								}
 								p {
 									font-weight: 500;
@@ -4405,6 +4445,8 @@ header {
 				"hot_news hot_news small_cell_2"
 				"small_cell_3 small_cell_4 small_cell_5";
 			.hot_news {
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
 				grid-area: hot_news;
 				width: 100%;
 				padding: 1.5rem 2rem;
@@ -4472,7 +4514,7 @@ header {
 									align-items: center;
 									content: "";
 									width: 38px;
-									height: 100px;
+									height: 115px;
 									background-color: #f2f2f2;
 									z-index: -1;
 									border-radius: 8px;
@@ -4482,19 +4524,23 @@ header {
 								display: flex;
 								flex-direction: column;
 								gap: 8px;
-								h2 {
-									font-style: normal;
-									font-weight: 600;
-									font-size: 14px;
-									line-height: 17px;
-									color: #000000;
-									overflow: hidden;
-									text-overflow: ellipsis;
-									display: -webkit-box;
-									-webkit-line-clamp: 3;
-									line-clamp: 3;
-									-webkit-box-orient: vertical;
+								a {
+									text-decoration: none;
+									h2 {
+										font-style: normal;
+										font-weight: 600;
+										font-size: 14px;
+										line-height: 17px;
+										color: #000000;
+										overflow: hidden;
+										text-overflow: ellipsis;
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										line-clamp: 3;
+										-webkit-box-orient: vertical;
+									}
 								}
+
 								p {
 									font-weight: 500;
 									font-size: 8px;

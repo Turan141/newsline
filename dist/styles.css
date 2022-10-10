@@ -1847,6 +1847,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     width: auto;
   }
   .wrapper .main_news .hot_news {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -1894,7 +1895,10 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     flex-direction: column;
     gap: 7px;
   }
-  .wrapper .main_news .hot_news .news_items ul li .item_data h2 {
+  .wrapper .main_news .hot_news .news_items ul li .item_data a {
+    text-decoration: none;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -2293,6 +2297,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     padding: 2rem 1rem 1.1rem 1rem;
     gap: 1rem;
     border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   }
   .wrapper .main_news .hot_news .hot_news_title {
     display: none;
@@ -2331,6 +2336,21 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     display: flex;
     flex-direction: column;
     gap: 7px;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a {
+    text-decoration: none;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   .wrapper .main_news .hot_news .news_items ul li .item_data h2 {
     font-style: normal;
@@ -2706,6 +2726,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     height: 100%;
   }
   .wrapper .main_news .hot_news {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -2753,7 +2774,10 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     flex-direction: column;
     gap: 7px;
   }
-  .wrapper .main_news .hot_news .news_items ul li .item_data h2 {
+  .wrapper .main_news .hot_news .news_items ul li .item_data a {
+    text-decoration: none;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -3149,6 +3173,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     margin: 0 auto;
   }
   .wrapper .main_news .hot_news {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     grid-area: hot_news;
     background-color: #ffffff;
     display: flex;
@@ -3197,7 +3222,10 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     flex-direction: column;
     gap: 7px;
   }
-  .wrapper .main_news .hot_news .news_items ul li .item_data h2 {
+  .wrapper .main_news .hot_news .news_items ul li .item_data a {
+    text-decoration: none;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -3489,7 +3517,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     align-items: center;
     content: "";
     width: 38px;
-    height: 100px;
+    height: 115px;
     background-color: #f2f2f2;
     z-index: -1;
     border-radius: 8px;
@@ -3499,7 +3527,10 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     flex-direction: column;
     gap: 8px;
   }
-  .wrapper .main_news .hot_news .news_items ul li .item_data h2 {
+  .wrapper .main_news .hot_news .news_items ul li .item_data a {
+    text-decoration: none;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -3647,6 +3678,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     grid-template-areas: "hot_news hot_news small_cell_1" "hot_news hot_news small_cell_2" "small_cell_3 small_cell_4 small_cell_5";
   }
   .wrapper .main_news .hot_news {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     grid-area: hot_news;
     width: 100%;
     padding: 1.5rem 2rem;
@@ -3675,7 +3707,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
     z-index: -1;
   }
   .wrapper .main_news .hot_news .news_items ul li {
@@ -3708,7 +3740,10 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     flex-direction: column;
     gap: 8px;
   }
-  .wrapper .main_news .hot_news .news_items ul li .item_data h2 {
+  .wrapper .main_news .hot_news .news_items ul li .item_data a {
+    text-decoration: none;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -3844,6 +3879,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     grid-template-areas: "hot_news hot_news small_cell_1" "hot_news hot_news small_cell_2" "small_cell_3 small_cell_4 small_cell_5";
   }
   .wrapper .main_news .hot_news {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     grid-area: hot_news;
     width: 100%;
     padding: 1.5rem 2rem;
@@ -3912,7 +3948,7 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     align-items: center;
     content: "";
     width: 38px;
-    height: 100px;
+    height: 115px;
     background-color: #f2f2f2;
     z-index: -1;
     border-radius: 8px;
@@ -3922,7 +3958,10 @@ header .header_main .most_searched_panel .most_search_right .search_element a {
     flex-direction: column;
     gap: 8px;
   }
-  .wrapper .main_news .hot_news .news_items ul li .item_data h2 {
+  .wrapper .main_news .hot_news .news_items ul li .item_data a {
+    text-decoration: none;
+  }
+  .wrapper .main_news .hot_news .news_items ul li .item_data a h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
